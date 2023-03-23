@@ -39,6 +39,7 @@ test('locators', async ({ page }) => {
   //filter by  child
   await page.locator('.auth-form__field input').nth(1)
   await page.locator('.auth-form__field input').first()
+  await page.locator('.auth-form__field input').last()
 
   //get list
   await page.locator('.auth-form__field input') //get 3 elements
@@ -105,5 +106,8 @@ test('User is able to register by email', async ({ page }) => {
 // ======================================== 2 =========================================================
 //2. Дана таблица (см. Вложение - код таблицы максимально упрощён).
 
-//универсальный XPATH селектор //tbody/tr[1]/td[5] - Jul 19, 2018 14:42 PM
-//                             //tbody/tr[2]/td[5] - Jul 19, 2018 14:43 PM
+//универсальный XPATH доступный для понимая //tbody/tr[1]/td[5] - Jul 19, 2018 14:42 PM
+//                                          //tbody/tr[2]/td[5] - Jul 19, 2018 14:43 PM
+
+// тоже работает https://stackoverflow.com/questions/14745478/how-to-select-table-column-by-column-header-name-with-xpath
+// table/tbody/tr[contains(.,'SimpleDataset')]/td[count(preceding-sibling::td)+1 = count(ancestor::table/thead/tr/th[.='Updated']/preceding-sibling::th)+1]
