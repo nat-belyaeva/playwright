@@ -38,6 +38,7 @@ test('locators', async ({ page }) => {
 
   //filter by  child
   await page.locator('.auth-form__field input').nth(1)
+  await page.locator('.auth-form__field input').first()
 
   //get list
   await page.locator('.auth-form__field input') //get 3 elements
