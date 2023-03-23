@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test1": "npx playwright test locators.spec.js --headed --project=firefox"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

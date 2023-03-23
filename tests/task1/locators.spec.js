@@ -41,6 +41,10 @@ test('locators', async ({ page }) => {
 
   //get list
   await page.locator('.auth-form__field input') //get 3 elements
+
+  //by another locator
+  await page.locator('ul.b-list-topics>li')
+    .filter({has:page.locator('a[href="./viewtopic.php?t=24798149"]')})
 })
 
 test('User is able to type in the Seaarch field', async ({ page }) => {
