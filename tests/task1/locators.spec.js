@@ -109,5 +109,5 @@ test('User is able to register by email', async ({ page }) => {
 //универсальный XPATH доступный для понимая //tbody/tr[1]/td[5] - Jul 19, 2018 14:42 PM
 //                                          //tbody/tr[2]/td[5] - Jul 19, 2018 14:43 PM
 
-// тоже работает https://stackoverflow.com/questions/14745478/how-to-select-table-column-by-column-header-name-with-xpath
+
 // table/tbody/tr[contains(.,'SimpleDataset')]/td[count(preceding-sibling::td)+1 = count(ancestor::table/thead/tr/th[.='Updated']/preceding-sibling::th)+1]
