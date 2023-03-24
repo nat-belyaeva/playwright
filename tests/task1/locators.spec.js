@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 // =====================1. Используя сайт https://www.onliner.by/, составить как можно больше локаторов различного типа =====================
+test.describe("Find locators and do first tests using them", () => {
 
 test('locators', async ({ page }) => {
 
@@ -56,11 +57,15 @@ test('locators', async ({ page }) => {
       })
  })
 
-  test('User is able to type in the Seaarch field', async ({page}) => {
+  test.beforeEach(async ({ page }, testInfo) => {
+    console.log(`Running ${testInfo.title}`);
+    await page.goto('https://www.onliner.by/');
+  })
+
+  test('User is able to type in the Search field', async ({page}) => {
     const getSearchInput = await page.locator('.fast-search__input')
     const getSearchModal = await page.locator('#fast-search-modal .modal-dialog')
 
-    await page.goto('https://www.onliner.by/')
     await getSearchInput.type('mobile phone')
     await expect(getSearchModal).toHaveCount(1)
   })
@@ -69,7 +74,6 @@ test('locators', async ({ page }) => {
     const getVhodBtn = await page.locator('.auth-bar__item--text')
     const authForm = await page.locator(('#auth-container .auth-form'))
 
-    await page.goto('https://www.onliner.by/')
     await getVhodBtn.click()
     await expect(authForm).toBeVisible()
   })
@@ -89,7 +93,7 @@ test('locators', async ({ page }) => {
     const submitBtn = await page.locator('button.auth-button')
     const confirmWindow = await page.locator('.auth-form__title')
 
-    await page.goto('https://www.onliner.by/')
+    //await page.goto('https://www.onliner.by/')
     await getVhodBtn.click()
     await expect(authForm).toBeVisible()
 
@@ -115,7 +119,6 @@ test('locators', async ({ page }) => {
           has: page.locator(('.b-main-navigation__advert.b-main-navigation__advert_another '))
         })
 
-    await page.goto('https://www.onliner.by/')
     await searchLoopeBtn.click()
     await expect(page).toHaveURL('https://s.onliner.by/tasks')
   })
@@ -124,9 +127,9 @@ test('USer is able to click LoopeBtn by text locator', async ({page}) => {
   const searchLoopeBtn = await page.locator('ul.b-main-navigation>li')
       .filter({hasText: 'Найдите мастера'})
 
-  await page.goto('https://www.onliner.by/')
   await searchLoopeBtn.click()
   await expect(page).toHaveURL('https://s.onliner.by/tasks')
+})
 })
 
 
