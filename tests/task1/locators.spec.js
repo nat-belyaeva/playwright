@@ -35,6 +35,8 @@ test('locators', async ({ page }) => {
 
   //filter by text
   await page.locator('form:has-text("Регистрация")')
+  await page.locator('ul.b-main-navigation>li')
+      .filter({hasText: 'Найдите мастера'})
 
   //filter by  child
   await page.locator('.auth-form__field input').nth(1)
@@ -52,11 +54,7 @@ test('locators', async ({ page }) => {
       .filter({
         has: page.locator(('.b-main-navigation__advert_another'))
       })
-
-  await page.locator('ul.b-main-navigation>li')
-      .filter({hasText: 'Найдите мастера'})
-
-})
+ })
 
   test('User is able to type in the Seaarch field', async ({page}) => {
     const getSearchInput = await page.locator('.fast-search__input')
@@ -122,7 +120,7 @@ test('locators', async ({ page }) => {
     await expect(page).toHaveURL('https://s.onliner.by/tasks')
   })
 
-test.only('USer is able to click LoopeBtn by text', async ({page}) => {
+test('USer is able to click LoopeBtn by text locator', async ({page}) => {
   const searchLoopeBtn = await page.locator('ul.b-main-navigation>li')
       .filter({hasText: 'Найдите мастера'})
 
