@@ -63,35 +63,35 @@ test('locators', async ({ page }) => {
   })
 
   test('User is able to type in the Search field', async ({page}) => {
-    const getSearchInput = await page.locator('.fast-search__input')
-    const getSearchModal = await page.locator('#fast-search-modal .modal-dialog')
+    const getSearchInput =  page.locator('.fast-search__input')
+    const getSearchModal =  page.locator('#fast-search-modal .modal-dialog')
 
     await getSearchInput.type('mobile phone')
     await expect(getSearchModal).toHaveCount(1)
   })
 
   test('User is able to open authentification window', async ({page}) => {
-    const getVhodBtn = await page.locator('.auth-bar__item--text')
-    const authForm = await page.locator(('#auth-container .auth-form'))
+    const getVhodBtn =  page.locator('.auth-bar__item--text')
+    const authForm =  page.locator(('#auth-container .auth-form'))
 
     await getVhodBtn.click()
     await expect(authForm).toBeVisible()
   })
 
   test('User is able to register by email', async ({page}) => {
-    const getVhodBtn = await page.locator('.auth-bar__item--text')
-    const authForm = await page.locator(('#auth-container .auth-form'))
-    const registerLink = await page.locator('.auth-form__description [href="https://profile.onliner.by/registration"]')
-    const registerWord = await page.locator('form:has-text("Регистрация")')
-    const email = await page.getByPlaceholder('Ваш e-mail')
-    const passwordForm = await page.locator('.auth-form__field input').nth(1)
+    const getVhodBtn =  page.locator('.auth-bar__item--text')
+    const authForm =  page.locator(('#auth-container .auth-form'))
+    const registerLink =  page.locator('.auth-form__description [href="https://profile.onliner.by/registration"]')
+    const registerWord =  page.locator('form:has-text("Регистрация")')
+    const email =  page.getByPlaceholder('Ваш e-mail')
+    const passwordForm =  page.locator('.auth-form__field input').nth(1)
     const rando = Math.random().toString(36).substring(2, 7)
     const typeEmail = `tech${rando}@agilquest.net`
     const typePassword = `Qwerty123@`
-    const repeatPassword = await page.locator('//*[@placeholder="Повторите пароль"]')
-    const policyCheckbox = await page.locator('.i-checkbox__faux')
-    const submitBtn = await page.locator('button.auth-button')
-    const confirmWindow = await page.locator('.auth-form__title')
+    const repeatPassword =  page.locator('//*[@placeholder="Повторите пароль"]')
+    const policyCheckbox =  page.locator('.i-checkbox__faux')
+    const submitBtn =  page.locator('button.auth-button')
+    const confirmWindow = page.locator('.auth-form__title')
 
     //await page.goto('https://www.onliner.by/')
     await getVhodBtn.click()
