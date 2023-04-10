@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('Fill inputs, checkboxes', () => {
+test.describe('Fill inputs, checkboxes, dropdowns', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com/')
