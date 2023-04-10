@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test1": "npx playwright test locators.spec.js --headed --project=firefox",
     "task2": "npx playwright test task2.spec.js --headed --project=chromium"
   },
   "keywords": [],
