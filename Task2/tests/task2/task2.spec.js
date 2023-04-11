@@ -124,10 +124,11 @@ test.describe('Upload file', () => {
   test('Upload file', async ({ page }) => {
     await page.goto('https://demoqa.com/upload-download')
 
-    await page.setInputFiles('#uploadFile', 'tests/task2/task2.spec.js')
+    await page.setInputFiles('#uploadFile', 'test_data/FileToUpload.txt')
+    await page.pause()
     await page.locator('#uploadFile').click()
     await expect(page.locator('.mt-3 p')).toHaveId('uploadedFilePath')
-    await expect(page.locator('.mt-3 p')).toContainText('task2')
+    await expect(page.locator('.mt-3 p')).toContainText('FileToUpload')
   })
 })
 
