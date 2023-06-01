@@ -1,0 +1,23 @@
+{
+  "name": "playwright1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "task3": "npx playwright test loginUi.spec.js --headed --project=chromium"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nat-belyaeva/playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nat-belyaeva/playwright/issues"
+  },
+  "homepage": "https://github.com/nat-belyaeva/playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  }
+}

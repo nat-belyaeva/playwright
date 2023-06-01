@@ -12,6 +12,7 @@
     <content url="file://$MODULE_DIR$/Task1/node_modules/@types" />
     <content url="file://$MODULE_DIR$/Task2/node_modules/@playwright/test/node_modules/playwright-core/types" />
     <content url="file://$MODULE_DIR$/Task2/node_modules/@types" />
+    <content url="file://$MODULE_DIR$/Task3/node_modules/@types" />
     <content url="file://$MODULE_DIR$/node_modules/@playwright/test/node_modules/playwright-core/types" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
